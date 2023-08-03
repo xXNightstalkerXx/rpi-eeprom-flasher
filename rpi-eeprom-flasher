@@ -4,9 +4,9 @@
 start_dir=$PWD
 sd_image_preset="pieeprom_sd_boot.bin"
 usb_image_preset="pieeprom_usb_boot.bin"
-clean_image_dir=usr/bin/eeprom_flasher/clean_images
-flash_image_dir=usr/bin/eeprom_flasher/flash_images
-config_dir=usr/bin/eeprom_flasher/configs
+clean_image_dir=/usr/bin/eeprom_flasher/clean_images
+flash_image_dir=/usr/bin/eeprom_flasher/flash_images
+config_dir=/usr/bin/eeprom_flasher/configs
 
 #Color Declarations
 std=`tput setaf 15`
