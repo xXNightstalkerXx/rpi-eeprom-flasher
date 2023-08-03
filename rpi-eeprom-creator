@@ -2,33 +2,41 @@
 
 #Directory Declarations
 start_dir=$PWD
-sd_image_preset="pieeprom_sd_boot.bin"
-usb_image_preset="pieeprom_usb_boot.bin"
+install_dir=/usr/bin/eeprom_flasher
+eeprom_files_dir=/usr/bin/firmware
+eeprom_scripts_dir=/usr/bin
 clean_image_dir=/usr/bin/eeprom_flasher/clean_images
 flash_image_dir=/usr/bin/eeprom_flasher/flash_images
 config_dir=/usr/bin/eeprom_flasher/configs
+sd_image_preset="pieeprom_sd_boot.bin"
+usb_image_preset="pieeprom_usb_boot.bin"
 
 #Color Declarations
 std=`tput setaf 15`
 red=`tput setaf 9 bold`
 green=`tput setaf 10 bold`
 yellow=`tput setaf 11 bold`
-pink=`tput setaf 63`
+pink=`tput setaf 57`
+blue=`tput setaf 27 bold`
 
 #Main Script
 echo ""
 echo ""
-echo "${pink}      /////////  /////////  /////////  ////////  /////////  /////////////${std}"
-echo "${pink}     //         //         //     //  //    //  //     //  //    //   //${std}"
-echo "${pink}    //         //         //     //  //    //  //     //  //    //   //${std}"
-echo "${pink}   /////      /////      /////////  ////////  //     //  //    //   //${std}"
-echo "${pink}  //         //         //         //\\\      //     //  //         //${std}"
-echo "${pink} //         //         //         //  \\\    //     //  //         //${std}"
-echo "${pink}/////////  /////////  //         //    \\\  /////////  //         //${std}"
+echo "${blue}      /////////  /////////  /////////  ////////  /////////  /////////////${std}"
+echo "${blue}     //         //         //     //  //    //  //     //  //    //   //${std}"
+echo "${blue}    //         //         //     //  //    //  //     //  //    //   //${std}"
+echo "${blue}   /////      /////      /////////  ////////  //     //  //    //   //${std}"
+echo "${blue}  //         //         //         //\\\      //     //  //         //${std}"
+echo "${blue} //         //         //         //  \\\    //     //  //         //${std}"
+echo "${blue}/////////  /////////  //         //    \\\  /////////  //         //${std}"
 echo "RPI EEPROM Creator by Nightstalker for the Kali Linux Distro"
 echo ""
 echo ""
 
+echo "${red}Launch Directory:${std}"
+echo $start_dir
+
+echo ""
 echo "${red}Clean Images Directory:${std}"
 echo $clean_image_dir
 
