@@ -193,7 +193,7 @@ then
 	if [[ $start_dir == *"rpi-eeprom-flasher" ]]
         then
                 echo "${red}It seems I'm executed within my GIT Directory.${std}"
-		echo "${red}YOU WILL HAVE TO USE `CD` AFTER I PURGED MY DIRECTORY!${std}"
+		echo "${red}YOU WILL HAVE TO USE 'CD' AFTER I PURGED MY DIRECTORY!${std}"
 		echo "${yellow}Purging the Directory now!${std}"
 		echo ""
                 echo "${blue}Installation Complete! Good Bye!${std}"
