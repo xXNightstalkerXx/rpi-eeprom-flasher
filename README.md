@@ -12,8 +12,8 @@ Also feel free to contribute to this Repository and make it better :)
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
-INSTALLATION
--
+# INSTALLATION
+
 
 You have 2 Options how to install this flasher:
 
