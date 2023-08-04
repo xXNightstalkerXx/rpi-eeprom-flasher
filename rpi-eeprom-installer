@@ -51,7 +51,7 @@ then
 	then
     		echo "${blue}Installation Directory exists. Not Creating this Directory!${std}"
 	else
-    		echo "${red}Installation Directory doesn't exist. Creating the Directory${std}!"
+    		echo "${red}Installation Directory doesn't exist. Creating the Directory!${std}!"
 		sudo mkdir -p $install_dir
 	fi
 	echo ""
