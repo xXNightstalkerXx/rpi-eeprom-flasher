@@ -93,7 +93,7 @@ then
         sudo rm rpi-eeprom-flasher
         echo "${blue}Deleting rpi-eeprom-creator...${std}"
         sudo rm rpi-eeprom-creator
-        echo "${blue}Deleting rpi-eeprom-installer...${std}$"
+        echo "${blue}Deleting rpi-eeprom-installer...${std}"
         sudo rm rpi-eeprom-installer
         echo ""
         echo "${blue}Script Files removed from the System! Purging myself now!${std}"
