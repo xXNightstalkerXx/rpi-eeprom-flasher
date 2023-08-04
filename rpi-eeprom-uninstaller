@@ -1,0 +1,114 @@
+#! /bin/bash
+
+#Directory Declarations
+start_dir=$PWD
+temp_dir=/tmp/downloads
+install_dir=/usr/bin/eeprom_flasher
+eeprom_files_dir=/usr/bin/firmware
+eeprom_scripts_dir=/usr/bin
+clean_image_dir=/usr/bin/eeprom_flasher/clean_images
+flash_image_dir=/usr/bin/eeprom_flasher/flash_images
+config_dir=/usr/bin/eeprom_flasher/configs
+
+#Color Declarations
+std=`tput setaf 15`
+red=`tput setaf 9 bold`
+green=`tput setaf 10 bold`
+yellow=`tput setaf 11 bold`
+pink=`tput setaf 57`
+blue=`tput setaf 27 bold`
+
+#Main Script
+echo ""
+echo ""
+echo "${blue}      /////////  /////////  /////////  ////////  /////////  /////////////${std}"
+echo "${blue}     //         //         //     //  //    //  //     //  //    //   //${std}"
+echo "${blue}    //         //         //     //  //    //  //     //  //    //   //${std}"
+echo "${blue}   /////      /////      /////////  ////////  //     //  //    //   //${std}"
+echo "${blue}  //         //         //         //\\\      //     //  //         //${std}"
+echo "${blue} //         //         //         //  \\\    //     //  //         //${std}"
+echo "${blue}/////////  /////////  //         //    \\\  /////////  //         //${std}"
+echo "RPI EEPROM Uninstaller by Nightstalker for the Kali Linux Distro"
+echo ""
+echo ""
+echo "${blue}Checking OS...${std}"
+os_type="$(grep -E '^(NAME)=' /etc/os-release)"
+os_type=${os_type#*=}
+echo "$os_type"
+if [[ "$os_type" == *"Kali"* ]]
+then
+        echo ""
+        echo "${blue}Operating System okay! Continuing to Uninstall!${std}"
+        sleep 1
+
+        echo ""
+        echo ""
+        echo "${blue}Checking Directories...${std}"
+        echo ""
+        echo "${blue}Checking Installation Directory...${std}"
+        echo "$install_dir"
+        if [ -d "$install_dir" ]
+        then
+                echo "${blue}Installation Directory exists. Deleting this Directory!${std}"
+                sudo rm -d -r $install_dir
+        else
+                echo "${red}Installation Directory doesn't exist. Not able to delete!${std}"
+        fi
+        echo ""
+        echo "${blue}Checking EEPROM Files Directory...${std}"
+        echo "$eeprom_files_dir"
+        if [ -d "$eeprom_files_dir" ]
+        then
+                echo "${blue}EEPROM Files Directory exists. Deleting this Directory!${std}"
+                sudo rm -d -r $eeprom_files_dir
+        else
+		echo "${red}EEPROM Files Directory doesn't exist. Not able to delete!${std}"
+        fi
+        echo ""
+        echo "${blue}Checking Temp Files Directory...${std}"
+        echo "$temp_dir"
+        if [ -d "$temp_dir" ]
+        then
+                echo "${blue}Temp Files Directory exists. Deleting this Directory!${std}"
+                sudo rm -d -r $temp_dir
+        else
+                echo "${red}Temp Files Directory doesn't exist. Not able to delete!${std}"
+        fi
+        echo ""
+        echo "${blue}Directories sucessfully deleted! Continuing to Uninstall!${std}"
+        sleep 1
+
+        echo ""
+        echo ""
+        echo "${blue}Deleting Script Files in /usr/bin Directory...${std}"
+        echo ""
+        echo "${blue}Switching into Directory...${std}"
+        echo "$eeprom_scripts_dir"
+        cd $eeprom_scripts_dir
+        echo "${blue}Deleting rpi-eeprom-update...${std}"
+        sudo rm rpi-eeprom-update
+        echo "${blue}Deleting rpi-eeprom-config...${std}"
+        sudo rm rpi-eeprom-config
+        echo "${blue}Deleting rpi-eeprom-digest...${std}"
+        sudo rm rpi-eeprom-digest
+        echo "${blue}Deleting rpi-eeprom-flasher...${std}"
+        sudo rm rpi-eeprom-flasher
+        echo "${blue}Deleting rpi-eeprom-creator...${std}"
+        sudo rm rpi-eeprom-creator
+        echo "${blue}Deleting rpi-eeprom-installer...${std}$"
+        sudo rm rpi-eeprom-installer
+        echo ""
+        echo "${blue}Script Files removed from the System! Purging myself now!${std}"
+        sleep 1
+
+        echo ""
+        echo ""
+        echo "${blue}Uninstall completed, Good bye!${std}"
+        sudo rm rpi-eeprom-uninstaller
+
+else
+        echo ""
+        echo "${red}Wrong Operating System detected! Aborting the Installation!${std}"
+        sleep 1
+        exit 1
+fi
