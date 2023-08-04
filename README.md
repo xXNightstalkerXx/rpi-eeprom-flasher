@@ -56,8 +56,8 @@ The Installer does the rest of the Job for you now.
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
-HOW TO USE
--
+# HOW TO USE
+
     rpi-eeprom-creator
 Helps you setup a new EEPROM Image with custom configs like "SD-Boot" or "USB-Boot"
 
