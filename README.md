@@ -11,9 +11,9 @@ Also feel free to contribute to this Repository and make it better :)
 
 
 
-################################################################
+----------------------------------------------------------------
 INSTALLATION
-################################################################
+----------------------------------------------------------------
 
 You have 2 Options how to install this flasher:
 
@@ -30,9 +30,9 @@ You have 2 Options how to install this flasher:
     - ./rpi-eeprom-installer
     - The Installer does the rest of the Job for you now.
 
-################################################################
+----------------------------------------------------------------
 HOW TO USE
-################################################################
+----------------------------------------------------------------
 
 After executing the Installer you can use the following commands anywhere on your system:
     - rpi-eeprom-creator  (helps you setup a new EEPROM Image with Custom configs like SD-Boot or USB-Boot)
@@ -40,5 +40,5 @@ After executing the Installer you can use the following commands anywhere on you
     - rpi-eeprom-uninstaller  (uninstalls the whole rpi-eeprom-flasher and all it's files)
     - rpi-eeprom-installer  (would install the rpi-eeprom-flasher but doesn't do much when already installed)
 
-################################################################
-################################################################
+----------------------------------------------------------------
+----------------------------------------------------------------
