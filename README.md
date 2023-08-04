@@ -10,7 +10,7 @@ If you find something interesting within my Scripts feel free to copy parts of i
 Also feel free to contribute to this Repository and make it better :)
 
 
-
+----------------------------------------------------------------
 ----------------------------------------------------------------
 INSTALLATION
 -
@@ -48,13 +48,14 @@ Navigate into the Directory you placed the rpi-eeprom-installer first.</br>
 </br>
 
     sudo chmod 0755 rpi-eeprom-installer
-Now make the Script executable
+Make the Script executable
     
     ./rpi-eeprom-installer
 Launch the Script
 </br>
 The Installer does the rest of the Job for you now.
 
+----------------------------------------------------------------
 ----------------------------------------------------------------
 HOW TO USE
 -
@@ -69,3 +70,6 @@ Uninstalls the whole rpi-eeprom-flasher and all it's Files
 
     rpi-eeprom-installer
 Would install the rpi-eeprom-flasher but doesn't do much when already installed
+
+----------------------------------------------------------------
+----------------------------------------------------------------
