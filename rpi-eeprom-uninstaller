@@ -54,7 +54,6 @@ then
         else
                 echo "${red}Installation Directory doesn't exist. Not able to delete!${std}"
         fi
-        echo ""
         echo "${blue}Checking EEPROM Files Directory...${std}"
         echo "$eeprom_files_dir"
         if [ -d "$eeprom_files_dir" ]
@@ -64,7 +63,6 @@ then
         else
 		echo "${red}EEPROM Files Directory doesn't exist. Not able to delete!${std}"
         fi
-        echo ""
         echo "${blue}Checking Temp Files Directory...${std}"
         echo "$temp_dir"
         if [ -d "$temp_dir" ]
