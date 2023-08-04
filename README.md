@@ -17,6 +17,7 @@ INSTALLATION
 
 You have 2 Options how to install this flasher:
 
+---------------------------------------------------------------
 
 OPTION 1
 -
@@ -35,7 +36,6 @@ Launch the rpi-eeprom-installer
 </br>
 The Installer does the rest of the Job for you now.
 
------------------------------------------------------------------
 -----------------------------------------------------------------
 
 OPTION 2
