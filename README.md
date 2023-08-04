@@ -39,6 +39,3 @@ HOW TO USE
   - rpi-eeprom-flasher  (helps you flash an existing EEPROM Image to the EEPROM)
   - rpi-eeprom-uninstaller  (uninstalls the whole rpi-eeprom-flasher and all it's files)
   - rpi-eeprom-installer  (would install the rpi-eeprom-flasher but doesn't do much when already installed)
-
-----------------------------------------------------------------
-----------------------------------------------------------------
