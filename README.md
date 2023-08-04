@@ -30,7 +30,7 @@ Navigate into the cloned Directory
     sudo chmod 0755 rpi-eeprom-installer
 To make the Script executable
 
-    . rpi-eeprom-installer
+    ./rpi-eeprom-installer
 Launch the Script
 </br>
 </br>
