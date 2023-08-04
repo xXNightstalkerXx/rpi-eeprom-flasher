@@ -9,6 +9,7 @@ eeprom_scripts_dir=/usr/bin
 clean_image_dir=/usr/bin/eeprom_flasher/clean_images
 flash_image_dir=/usr/bin/eeprom_flasher/flash_images
 config_dir=/usr/bin/eeprom_flasher/configs
+latest_eeprom_binary="pieeprom-2023-01-11.bin"
 
 #Color Declarations
 std=`tput setaf 15`
@@ -150,7 +151,7 @@ then
 	sudo mv latest $eeprom_files_dir
 	echo "${blue}Switching into the Firmware Folder and copying the latest Image Binary to /usr/bin/eeprom_flasher ...${std}"
 	cd $eeprom_files_dir"/critical"
-	sudo cp pieeprom-2023-01-11 $clean_image_dir
+	sudo cp $latest_eeprom_binary $clean_image_dir
 	echo "${blue}Cleaning up the /tmp/downloads Directory...${std}"
 	sudo rm -d -r $temp_dir"/rpi-eeprom"
 	echo ""
