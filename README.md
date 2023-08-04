@@ -13,12 +13,11 @@ Also feel free to contribute to this Repository and make it better :)
 
 ----------------------------------------------------------------
 INSTALLATION
-----------------------------------------------------------------
+-
 
 You have 2 Options how to install this flasher:
 
 1.) Download this Repo with Git:
--
   - sudo git clone https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.g
   - cd rpi-eeprom-flasher
   - sudo chmod 0755 rpi-eeprom-installer
@@ -26,7 +25,6 @@ You have 2 Options how to install this flasher:
   - The Installer does the rest of the Job for you now.
 
 2.) Download just the rpi-eeprom-installer Script and move it on your Pi manually (SFTP or by other means):
--
   - Navigate into the Directory you placed the rpi-eeprom-installer
   - sudo chmod 0755 rpi-eeprom-installer
   - ./rpi-eeprom-installer 
@@ -34,13 +32,13 @@ You have 2 Options how to install this flasher:
 
 ----------------------------------------------------------------
 HOW TO USE
-----------------------------------------------------------------
+-
 
 1.) After executing the Installer you can use the following commands anywhere on your system:
-  1.) rpi-eeprom-creator  (helps you setup a new EEPROM Image with Custom configs like SD-Boot or USB-Boot)
-  2.) rpi-eeprom-flasher  (helps you flash an existing EEPROM Image to the EEPROM)
-  3.) rpi-eeprom-uninstaller  (uninstalls the whole rpi-eeprom-flasher and all it's files)
-  4.) rpi-eeprom-installer  (would install the rpi-eeprom-flasher but doesn't do much when already installed)
+  - rpi-eeprom-creator  (helps you setup a new EEPROM Image with Custom configs like SD-Boot or USB-Boot)
+  - rpi-eeprom-flasher  (helps you flash an existing EEPROM Image to the EEPROM)
+  - rpi-eeprom-uninstaller  (uninstalls the whole rpi-eeprom-flasher and all it's files)
+  - rpi-eeprom-installer  (would install the rpi-eeprom-flasher but doesn't do much when already installed)
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
