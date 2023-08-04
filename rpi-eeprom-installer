@@ -158,7 +158,38 @@ then
 	echo ""
 	echo ""
 	echo "${blue}Installing the RPI-EEPROM-FLASHER...${std}"
+	echo ""
+        echo "${blue}Switching into Downloads Directory...${std}"
+        echo "$temp_dir"
+        cd $temp_dir
+        echo "${blue}Downloading Files with git...${std}"
+        sudo git clone https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git
+        echo "${blue}Making the Scripts executable...${std}"
+        cd rpi-eeprom-flasher
+        sudo chmod 0755 rpi-eeprom-flasher
+        sudo chmod 0755 rpi-eeprom-creator
+        sudo chmod 0755 rpi-eeprom-installer
+        sudo chmod 0755 rpi-eeprom-uninstaller
+        echo "${blue}Moving the Scripts into /usr/bin Directory...${std}"
+        sudo mv rpi-eeprom-flasher $eeprom_scripts_dir
+        sudo mv rpi-eeprom-creator $eeprom_scripts_dir
+        sudo mv rpi-eeprom-installer $eeprom_scripts_dir
+        sudo mv rpi-eeprom-uninstaller $eeprom_scripts_dir
+        echo "${blue}Moving the Config Files to /usr/bin/eeprom_flasher/configs ...${std}"
+        sudo mv default-sd-config.txt $config_dir
+        sudo mv default-usb-config.txt $config_dir
+        echo "${blue}Cleaning up the /tmp/downloads Directory...${std}"
+        sudo rm -d -r $temp_dir
+        echo ""
+        echo "${blue}RPI-EEPROM-FLASHER is installed and okay! Continuing Installation!${std}"
+        sleep 1
 
+        echo ""
+        echo ""
+        echo "${blue}Cleaning up the current Folder...${std}"
+        echo ""
+        echo "${blue}Checking if I'm executed within my GIT Directory...${std}"
+        echo "${blue}${std}"
 else
 	echo ""
 	echo "${red}Wrong Operating System detected! Aborting the Installation!${std}"
