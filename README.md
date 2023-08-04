@@ -23,51 +23,47 @@ You have 2 Options how to install this flasher:
 
 Clone the Git Repository
 
-        sudo git clone https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git
+    sudo git clone https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git
 
 Navigate into the cloned Directory
 
-        cd rpi-eeprom-flasher
+    cd rpi-eeprom-flasher
 
 Make the rpi-eeprom-installer executable
 
-        sudo chmod 0755 rpi-eeprom-installer
+    sudo chmod 0755 rpi-eeprom-installer
 
 Launch the rpi-eeprom-installer</br>
 
-        ./rpi-eeprom-installer
+    ./rpi-eeprom-installer
 
 The Installer does the rest of the Job for you now.
 
 -----------------------------------------------------------------
-2.) Download just the rpi-eeprom-installer Script and move it on your Pi manually (SFTP or by other means):
--
-
+Download just the rpi-eeprom-installer Script and move it on your Pi manually (SFTP or by other means):
+</br>
 Navigate into the Directory you placed the rpi-eeprom-installer first.</br>
+</br>
+
+    sudo chmod 0755 rpi-eeprom-installer
 Now make the Script executable
-
-        sudo chmod 0755 rpi-eeprom-installer
-
-Launch the Script
     
-        ./rpi-eeprom-installer
-
+    ./rpi-eeprom-installer
+Launch the Script
+</br>
 The Installer does the rest of the Job for you now.
 
 ----------------------------------------------------------------
 HOW TO USE
 -
+    rpi-eeprom-creator
+Helps you setup a new EEPROM Image with custom configs like "SD-Boot" or "USB-Boot"
 
-1.) After executing the Installer you can use the following commands anywhere on your system:
--
-        rpi-eeprom-creator
-helps you setup a new EEPROM Image with Custom configs like SD-Boot or USB-Boot
+    rpi-eeprom-flasher
+Helps you to flash an existing Image to the EEPROM
 
-        rpi-eeprom-flasher
-helps you flash an existing EEPROM Image to the EEPROM
+    rpi-eeprom-uninstaller
+Uninstalls the whole rpi-eeprom-flasher and all it's Files
 
-        rpi-eeprom-uninstaller
-uninstalls the whole rpi-eeprom-flasher and all it's files
-
-        rpi-eeprom-installer
-would install the rpi-eeprom-flasher but doesn't do much when already installed
+    rpi-eeprom-installer
+Would install the rpi-eeprom-flasher but doesn't do much when already installed
