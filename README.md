@@ -41,11 +41,18 @@ The Installer does the rest of the Job for you now.
 
 -----------------------------------------------------------------
 2.) Download just the rpi-eeprom-installer Script and move it on your Pi manually (SFTP or by other means):
+-
 
-    Navigate into the Directory you placed the rpi-eeprom-installer
+Navigate into the Directory you placed the rpi-eeprom-installer first.</br>
+Now make the Script executable
+
     sudo chmod 0755 rpi-eeprom-installer
-    The Installer does the rest of the Job for you now.
+
+Launch the Script
+    
     ./rpi-eeprom-installer
+
+The Installer does the rest of the Job for you now.
 
 ----------------------------------------------------------------
 HOW TO USE
