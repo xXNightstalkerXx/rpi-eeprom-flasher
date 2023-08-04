@@ -1,7 +1,6 @@
 #! /bin/bash
 
 #Directory Declarations
-start_dir=$PWD
 temp_dir=/tmp/downloads
 install_dir=/usr/bin/eeprom_flasher
 eeprom_files_dir=/usr/bin/firmware
