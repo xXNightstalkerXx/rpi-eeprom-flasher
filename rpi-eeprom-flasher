@@ -57,9 +57,12 @@ echo ""
 
 n=1
 for f in *; do
-        printf "%d. %s\n" $n "${f}"
-        flash_image_paths[${n}]=$flash_image_dir"/"${f}
-        ((n++))
+	if [[ ${f} == *".bin" ]]
+	then
+        	printf "%d. %s\n" $n "${f}"
+        	flash_image_paths[${n}]=$flash_image_dir"/"${f}
+        	((n++))
+	fi
 done
 
 echo ""
