@@ -1,7 +1,6 @@
 #! /bin/bash
 
 #Directory Declarations
-start_dir=$PWD
 install_dir=/usr/bin/eeprom_flasher
 eeprom_files_dir=/usr/bin/firmware
 eeprom_scripts_dir=/usr/bin
@@ -32,9 +31,6 @@ echo "${blue}/////////  /////////  //         //    \\\  /////////  //         /
 echo "RPI EEPROM Creator by Nightstalker for the Kali Linux Distro"
 echo ""
 echo ""
-
-echo "${red}Launch Directory:${std}"
-echo $start_dir
 
 echo ""
 echo "${red}Clean Images Directory:${std}"
