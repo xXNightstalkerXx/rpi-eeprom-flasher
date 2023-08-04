@@ -17,7 +17,7 @@ INSTALLATION
 
 You have 2 Options how to install this flasher:
 
-----------------------------------------------------------------
+
 1.) Download this Repo with Git:
 -
 
