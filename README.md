@@ -16,11 +16,13 @@ INSTALLATION
 ----------------------------------------------------------------
 
 You have 2 Options how to install this flasher:
-
+-
 1.) Download this Repo with Git:
+-
   1.) sudo git clone https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git
-  \n
+  -
   2.) cd rpi-eeprom-flasher
+  -
   3.) sudo chmod 0755 rpi-eeprom-installer
   4.) ./rpi-eeprom-installer
   5.) The Installer does the rest of the Job for you now.
