@@ -192,7 +192,8 @@ then
         echo "$start_dir"
 	if [[ $start_dir == *"rpi-eeprom-flasher" ]]
         then
-                echo "${blue}It seems I'm executed within my GIT Directory. Purging the Directory now!${s>                echo ""
+                echo "${blue}It seems I'm executed within my GIT Directory. Purging the Directory now!${std}"                
+		echo ""
                 echo "${blue}Installation Complete! Good Bye!${std}"
                 sudo rm -d -r $start_dir
         else
