@@ -52,10 +52,9 @@ then
 	then
     		echo "${red}Installation Directory exists. Not Creating this Directory!${std}"
 	else
-    		echo "${blue}Installation Directory doesn't exist. Creating the Directory!${std}!"
+    		echo "${blue}Installation Directory doesn't exist. Creating the Directory!${std}"
 		sudo mkdir -p $install_dir
 	fi
-	echo ""
 	echo "${blue}Checking EEPROM Files Directory...${std}"
 	echo "$eeprom_files_dir"
 	if [ -d "$eeprom_files_dir" ]
@@ -65,7 +64,6 @@ then
                 echo "${blue}EEPROM Files Directory doesn't exist. Creating the Directory!${std}"
                 sudo mkdir -p $eeprom_files_dir
         fi
-	echo ""
 	echo "${blue}Checking Clean Images Directory...${std}"
         echo "$clean_image_dir"
         if [ -d "$clean_image_dir" ]
@@ -75,7 +73,6 @@ then
                 echo "${blue}Clean Images Directory doesn't exist. Creating the Directory!${std}"
                 sudo mkdir -p $clean_image_dir
         fi
-	echo ""
         echo "${blue}Checking Flash Images Directory...${std}"
         echo "$flash_image_dir"
         if [ -d "$flash_image_dir" ]
@@ -85,7 +82,6 @@ then
                 echo "${blue}Flash Images Directory doesn't exist. Creating the Directory!${std}"
                 sudo mkdir -p $flash_image_dir
         fi
-	echo ""
         echo "${blue}Checking Config Files Directory...${std}"
         echo "$config_dir"
         if [ -d "$config_dir" ]
@@ -95,7 +91,6 @@ then
                 echo "${blue}Config Files Directory doesn't exist. Creating the Directory!${std}"
                 sudo mkdir -p $config_dir
         fi
-	echo ""
         echo "${blue}Checking Temp Files Directory...${std}"
         echo "$temp_dir"
         if [ -d "$temp_dir" ]
@@ -114,8 +109,10 @@ then
 	echo "${blue}Checking if Git is installed...${std}"
 	if hash git 2>/dev/null
 	then
+		echo ""
         	echo "${blue}Git is already installed!${std}"
 	else
+		echo ""
         	echo "${red}Git is not installed. Installing Git now!${std}"
 		sudo apt-get install git -y
 	fi
