@@ -2,12 +2,12 @@
 
 #Directory Declarations
 temp_dir=/tmp/downloads
-install_dir=/usr/bin/eeprom_flasher
+install_dir=/etc/rpi-eeprom-flasher
 eeprom_files_dir=/usr/bin/firmware
 eeprom_scripts_dir=/usr/bin
-clean_image_dir=/usr/bin/eeprom_flasher/clean_images
-flash_image_dir=/usr/bin/eeprom_flasher/flash_images
-config_dir=/usr/bin/eeprom_flasher/configs
+clean_image_dir=/etc/rpi-eeprom-flasher/clean_images
+flash_image_dir=/etc/rpi-eeprom-flasher/flash_images
+config_dir=/etc/rpi-eeprom-flasher/configs
 
 #Color Declarations
 std=`tput setaf 15`
