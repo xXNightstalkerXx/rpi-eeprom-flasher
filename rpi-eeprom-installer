@@ -3,12 +3,12 @@
 #Directory Declarations
 start_dir=$PWD
 temp_dir=/tmp/downloads
-install_dir=/etc/rpi-eeprom-flasher
+install_dir=/etc/eeprom_flasher
 eeprom_files_dir=/usr/bin/firmware
 eeprom_scripts_dir=/usr/bin
-clean_image_dir=/etc/rpi-eeprom-flasher/clean_images
-flash_image_dir=/etc/rpi-eeprom-flasher/flash_images
-config_dir=/etc/rpi-eeprom-flasher/configs
+clean_image_dir=/etc/eeprom_flasher/clean_images
+flash_image_dir=/etc/eeprom_flasher/flash_images
+config_dir=/etc/eeprom_flasher/configs
 latest_eeprom_binary="pieeprom-2023-01-11.bin"
 
 #Color Declarations
@@ -175,9 +175,9 @@ then
         sudo cp rpi-eeprom-creator $eeprom_scripts_dir
         sudo cp rpi-eeprom-installer $eeprom_scripts_dir
         sudo cp rpi-eeprom-uninstaller $eeprom_scripts_dir
-        echo "${blue}Moving the Config Files to $config_dir ...${std}"
-        sudo mv default-sd-config.txt $config_dir
-        sudo mv default-usb-config.txt $config_dir
+        echo "${blue}Copying the Config Files to $config_dir ...${std}"
+        sudo cp default-sd-config.txt $config_dir
+        sudo cp default-usb-config.txt $config_dir
         echo ""
         echo "${blue}RPI-EEPROM-FLASHER is installed and okay! Continuing Installation!${std}"
         sleep 1
