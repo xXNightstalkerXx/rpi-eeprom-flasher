@@ -15,7 +15,7 @@ Also feel free to contribute to this Repository and make it better :)
 # INSTALLATION
 
     wget https://github.com/xXNightstalkerXx/rpi-eeprom-flasher/blob/main/rpi-eeprom-installer
-Download the rpi-eeprom-installer file with wget
+Download the rpi-eeprom-installer Script with wget
 
     sudo chmod 0755 rpi-eeprom-installer
 To make the Script executable
