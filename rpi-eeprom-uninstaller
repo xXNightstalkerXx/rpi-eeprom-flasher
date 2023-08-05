@@ -2,12 +2,12 @@
 
 #Directory Declarations
 temp_dir=/tmp/downloads
-install_dir=/etc/rpi-eeprom-flasher
+install_dir=/etc/eeprom_flasher
 eeprom_files_dir=/usr/bin/firmware
 eeprom_scripts_dir=/usr/bin
-clean_image_dir=/etc/rpi-eeprom-flasher/clean_images
-flash_image_dir=/etc/rpi-eeprom-flasher/flash_images
-config_dir=/etc/rpi-eeprom-flasher/configs
+clean_image_dir=/etc/eeprom_flasher/clean_images
+flash_image_dir=/etc/eeprom_flasher/flash_images
+config_dir=/etc/eeprom_flasher/configs
 
 #Color Declarations
 std=`tput setaf 15`
@@ -77,7 +77,7 @@ then
 
         echo ""
         echo ""
-        echo "${blue}Deleting Script Files in /usr/bin Directory...${std}"
+        echo "${blue}Deleting Script Files in $eeprom_scripts_dir Directory...${std}"
         echo ""
         echo "${blue}Switching into Directory...${std}"
         echo "$eeprom_scripts_dir"
