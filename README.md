@@ -17,10 +17,10 @@ Also feel free to contribute to this Repository and make it better :)
     wget https://github.com/xXNightstalkerXx/rpi-eeprom-flasher/blob/main/rpi-eeprom-installer.sh
 Download the rpi-eeprom-installer Script with wget
 
-    sudo chmod 0755 rpi-eeprom-installer
+    sudo chmod 0755 rpi-eeprom-installer.sh
 To make the Script executable
 
-    ./rpi-eeprom-installer
+    ./rpi-eeprom-installer.sh
 Launch the Script
 </br>
 </br>
