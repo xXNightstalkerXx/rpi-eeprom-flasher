@@ -3,12 +3,12 @@
 #Directory Declarations
 start_dir=$PWD
 temp_dir=/tmp/downloads
-install_dir=/usr/bin/eeprom_flasher
+install_dir=/etc
 eeprom_files_dir=/usr/bin/firmware
 eeprom_scripts_dir=/usr/bin
-clean_image_dir=/usr/bin/eeprom_flasher/clean_images
-flash_image_dir=/usr/bin/eeprom_flasher/flash_images
-config_dir=/usr/bin/eeprom_flasher/configs
+clean_image_dir=/etc/eeprom_flasher/clean_images
+flash_image_dir=/etc/eeprom_flasher/flash_images
+config_dir=/etc/eeprom_flasher/configs
 latest_eeprom_binary="pieeprom-2023-01-11.bin"
 
 #Color Declarations
@@ -134,11 +134,11 @@ then
 	sudo chmod 0755 rpi-eeprom-config
 	sudo chmod 0755 rpi-eeprom-digest
 	sudo chmod 0755 rpi-eeprom-update
-	echo "${blue}Moving the Scripts into /usr/bin Directory...${std}"
+	echo "${blue}Moving the Scripts into $eeprom_scripts_dir Directory...${std}"
 	sudo mv rpi-eeprom-config $eeprom_scripts_dir
 	sudo mv rpi-eeprom-digest $eeprom_scripts_dir
 	sudo mv rpi-eeprom-update $eeprom_scripts_dir
-	echo "${blue}Moving the Binaries into /usr/bin/firmware Directory...${std}"
+	echo "${blue}Moving the Binaries into $eeprom_files_dir Directory...${std}"
 	cd firmware
 	sudo mv critical $eeprom_files_dir
 	sudo mv old $eeprom_files_dir
@@ -146,11 +146,11 @@ then
 	sudo mv beta $eeprom_files_dir
 	sudo mv default $eeprom_files_dir
 	sudo mv latest $eeprom_files_dir
-	echo "${blue}Switching into the Firmware Folder and copying the latest Image Binary to /usr/bin/eeprom_flasher ...${std}"
+	echo "${blue}Switching into the Firmware Folder and copying the latest Image Binary to $install_dir ...${std}"
 	cd $eeprom_files_dir"/critical"
 	sudo cp $latest_eeprom_binary $clean_image_dir
-	echo "${blue}Cleaning up the /tmp/downloads Directory...${std}"
-	sudo rm -d -r $temp_dir"/rpi-eeprom"
+	echo "${blue}Cleaning up the $temp_dir Directory...${std}"
+	sudo rm -d -r $temp_dir
 	echo ""
 	echo "${blue}RPI-EEPROM is installed and okay! Continuing Installation!${std}"
 	sleep 1
@@ -159,9 +159,9 @@ then
 	echo ""
 	echo "${blue}Installing the RPI-EEPROM-FLASHER...${std}"
 	echo ""
-        echo "${blue}Switching into Downloads Directory...${std}"
-        echo "$temp_dir"
-        cd $temp_dir
+        echo "${blue}Switching into Install Directory...${std}"
+        echo "$install_dir"
+        cd $install_dir
         echo "${blue}Downloading Files with git...${std}"
         sudo git clone https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git
         echo "${blue}Making the Scripts executable...${std}"
@@ -170,16 +170,14 @@ then
         sudo chmod 0755 rpi-eeprom-creator
         sudo chmod 0755 rpi-eeprom-installer
         sudo chmod 0755 rpi-eeprom-uninstaller
-        echo "${blue}Moving the Scripts into /usr/bin Directory...${std}"
-        sudo mv rpi-eeprom-flasher $eeprom_scripts_dir
-        sudo mv rpi-eeprom-creator $eeprom_scripts_dir
-        sudo mv rpi-eeprom-installer $eeprom_scripts_dir
-        sudo mv rpi-eeprom-uninstaller $eeprom_scripts_dir
-        echo "${blue}Moving the Config Files to /usr/bin/eeprom_flasher/configs ...${std}"
+        echo "${blue}Copying the Scripts into $eeprom_scripts_dir Directory...${std}"
+        sudo cp rpi-eeprom-flasher $eeprom_scripts_dir
+        sudo cp rpi-eeprom-creator $eeprom_scripts_dir
+        sudo cp rpi-eeprom-installer $eeprom_scripts_dir
+        sudo cp rpi-eeprom-uninstaller $eeprom_scripts_dir
+        echo "${blue}Moving the Config Files to $config_dir ...${std}"
         sudo mv default-sd-config.txt $config_dir
         sudo mv default-usb-config.txt $config_dir
-        echo "${blue}Cleaning up the /tmp/downloads Directory...${std}"
-        sudo rm -d -r $temp_dir
         echo ""
         echo "${blue}RPI-EEPROM-FLASHER is installed and okay! Continuing Installation!${std}"
         sleep 1
