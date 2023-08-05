@@ -13,8 +13,6 @@ Also feel free to contribute to this Repository and make it better :)
 ----------------------------------------------------------------
 ----------------------------------------------------------------
 # INSTALLATION
-</br>
-</br>
 
     wget https://github.com/xXNightstalkerXx/rpi-eeprom-flasher/blob/main/rpi-eeprom-installer
 Download the rpi-eeprom-installer file with wget
