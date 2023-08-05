@@ -3,12 +3,12 @@
 #Directory Declarations
 start_dir=$PWD
 temp_dir=/tmp/downloads
-install_dir=/etc
+install_dir=/etc/rpi-eeprom-flasher
 eeprom_files_dir=/usr/bin/firmware
 eeprom_scripts_dir=/usr/bin
-clean_image_dir=/etc/eeprom_flasher/clean_images
-flash_image_dir=/etc/eeprom_flasher/flash_images
-config_dir=/etc/eeprom_flasher/configs
+clean_image_dir=/etc/rpi-eeprom-flasher/clean_images
+flash_image_dir=/etc/rpi-eeprom-flasher/flash_images
+config_dir=/etc/rpi-eeprom-flasher/configs
 latest_eeprom_binary="pieeprom-2023-01-11.bin"
 
 #Color Declarations
