@@ -35,6 +35,7 @@ echo ""
 echo "${blue}Checking OS...${std}"
 os_type="$(grep -E '^(NAME)=' /etc/os-release)"
 os_type=${os_type#*=}
+echo ""
 echo "$os_type"
 if [[ "$os_type" == *"Kali"* ]]
 then
