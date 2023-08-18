@@ -11,12 +11,12 @@ sd_image_preset="pieeprom_sd_boot.bin"
 usb_image_preset="pieeprom_usb_boot.bin"
 
 #Color Declarations
-std=`tput setaf 15`
-red=`tput setaf 9 bold`
-green=`tput setaf 10 bold`
-yellow=`tput setaf 11 bold`
-pink=`tput setaf 57`
-blue=`tput setaf 27 bold`
+std=$(tput setaf 15)
+red=$(tput setaf 9 bold)
+green=$(tput setaf 10 bold)
+yellow=$(tput setaf 11 bold)
+pink=$(tput setaf 57)
+blue=$(tput setaf 27 bold)
 
 #Main Script
 echo ""
@@ -54,25 +54,25 @@ echo ""
 n=1
 for f in *; do
         printf "%d. %s\n" $n "${f}"
-        clean_image_paths[${n}]=$clean_image_dir"/"${f}
+        clean_image_paths[n]=$clean_image_dir"/"${f}
         ((n++))
 done
 
 echo ""
-read -p "${green}Enter a Number for a File: ${std}" n
+read -r -p "${green}Enter a Number for a File: ${std}" n
 
 while [[ $n -lt 1 || $n -gt ${#clean_image_paths[@]} ]]
 do
         echo ""
         echo "${red}Wrong Input! Please Select a Number for a File!${std}"
-        read -p "Enter a Number for a File: " n;
+        read -r -p "Enter a Number for a File: " n;
 done
 
 image_to_configure="${clean_image_paths[$n]}"
 
 echo ""
 echo "${green}You selected the following File:${std}"
-echo $image_to_configure
+echo "$image_to_configure"
 
 cd $config_dir
 
@@ -84,25 +84,25 @@ echo ""
 n=1
 for f in *; do
         printf "%d. %s\n" $n "${f}"
-        config_paths[${n}]=$config_dir"/"${f}
+        config_paths[n]=$config_dir"/"${f}
         ((n++))
 done
 
 echo ""
-read -p "${green}Enter a Number for a File: ${std}" n
+read -r -p "${green}Enter a Number for a File: ${std}" n
 
 while [[ $n -lt 1 || $n -gt ${#config_paths[@]} ]]
 do
         echo ""
         echo "${red}Wrong Input! Please Select a Number for a File!${std}"
-        read -p "Enter a Number for a File: " n;
+        read -r -p "Enter a Number for a File: " n;
 done
 
 config_to_implement="${config_paths[$n]}"
 
 echo ""
 echo "${green}You selected the following File:${std}"
-echo $config_to_implement
+echo "$config_to_implement"
 
 cd $flash_image_dir
 
@@ -114,13 +114,13 @@ echo "1. New Filename"
 echo "2. Preset Filename"
 
 echo ""
-read -p "${green}Enter a Number for an Option: ${std}" n
+read -r -p "${green}Enter a Number for an Option: ${std}" n
 
 while [[ $n -lt 1 || $n -gt 2 ]]
 do
         echo ""
         echo "${red}Wrong Input! Please Select a Number for an Option!${std}"
-        read -p "Enter a Number for an Option: " n;
+        read -r -p "Enter a Number for an Option: " n;
 done
 
 if [[ $n -eq 1 ]]
@@ -128,7 +128,7 @@ then
         echo ""
         echo ""
         echo "${green}You selected to set a new Filename! Filename MUST have a .bin extension!${std}"
-        read -p "Enter your new Filename: " new_filename
+        read -r -p "Enter your new Filename: " new_filename
 
         new_filename=$flash_image_dir"/"$new_filename
 
@@ -140,13 +140,13 @@ then
         echo "${red}NEW FILENAME:${std} $new_filename"
 
         echo ""
-        read -p "${green}Yes (y)/ No (n): ${std}" n;
+        read -r -p "${green}Yes (y)/ No (n): ${std}" n;
 
         while ! [[ "$n" =~ ^(y|n)$ ]];
         do
                 echo ""
                 echo "${red}Wrong Input! Please type 'y' for 'YES' or 'n' for 'NO'!${std}"
-                read -p "Yes (y)/ No (n): " n;
+                read -r -p "Yes (y)/ No (n): " n;
         done
 
         if [[ "$n" =~ ^(y)$ ]];
@@ -155,7 +155,7 @@ then
                 echo ""
                 echo "Your Image File is cooking now!"
 
-                sudo rpi-eeprom-config $image_to_configure --config $config_to_implement --out $new_filename
+                sudo rpi-eeprom-config "$image_to_configure" --config "$config_to_implement" --out "$new_filename"
 
                 echo ""
                 echo "${green}Finished the Image Creation!${std}"
@@ -177,13 +177,13 @@ else
         echo "2. $usb_image_preset"
 
         echo ""
-        read -p "${green}Enter a Number for an Option: ${std}" n
+        read -r -p "${green}Enter a Number for an Option: ${std}" n
 
         while [[ $n -lt 1 || $n -gt 2 ]]
         do
                 echo ""
                 echo "${red}Wrong Input! Please Select a Number for an Option!${std}"
-                read -p "Enter a Number for an Option: " n;
+                read -r -p "Enter a Number for an Option: " n;
         done
 
         if [[ $n -eq 1 ]]
@@ -203,13 +203,13 @@ else
                 echo "${red}NEW FILENAME:${std} $new_filename"
 
                 echo ""
-                read -p "${green}Yes (y)/ No (n): ${std}" n;
+                read -r -p "${green}Yes (y)/ No (n): ${std}" n;
 
                 while ! [[ "$n" =~ ^(y|n)$ ]];
                 do
                         echo ""
                         echo "${red}Wrong Input! Please type 'y' for 'YES' or 'n' for 'NO'!${std}"
-                        read -p "Yes (y)/ No (n): " n;
+                        read -r -p "Yes (y)/ No (n): " n;
                 done
 
                 if [[ "$n" =~ ^(y)$ ]];
@@ -218,7 +218,7 @@ else
                         echo ""
                         echo "Your Image File is cooking now!"
 
-                        sudo rpi-eeprom-config $image_to_configure --config $config_to_implement --out $new_filename
+                        sudo rpi-eeprom-config "$image_to_configure" --config "$config_to_implement" --out "$new_filename"
 
                         echo ""
                         echo "${green}Finished the Image Creation!${std}"
@@ -247,13 +247,13 @@ else
                 echo "${red}NEW FILENAME:${std} $new_filename"
 
                 echo ""
-                read -p "${green}Yes (y)/ No (n): ${std}" n;
+                read -r -p "${green}Yes (y)/ No (n): ${std}" n;
 
                 while ! [[ "$n" =~ ^(y|n)$ ]];
                 do
                         echo ""
                         echo "${red}Wrong Input! Please type 'y' for 'YES' or 'n' for 'NO'!${std}"
-                        read -p "Yes (y)/ No (n): " n;
+                        read -r -p "Yes (y)/ No (n): " n;
                 done
 
                 if [[ "$n" =~ ^(y)$ ]];
@@ -262,7 +262,7 @@ else
                         echo ""
                         echo "Your Image File is cooking now!"
 
-                        sudo rpi-eeprom-config $image_to_configure --config $config_to_implement --out $new_filename
+                        sudo rpi-eeprom-config "$image_to_configure" --config "$config_to_implement" --out "$new_filename"
 
                         echo ""
                         echo "${green}Finished the Image Creation!${std}"

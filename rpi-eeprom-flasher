@@ -11,12 +11,12 @@ sd_image_preset="pieeprom_sd_boot.bin"
 usb_image_preset="pieeprom_usb_boot.bin"
 
 #Color Declarations
-std=`tput setaf 15`
-red=`tput setaf 9 bold`
-green=`tput setaf 10 bold`
-yellow=`tput setaf 11 bold`
-pink=`tput setaf 57`
-blue=`tput setaf 27 bold`
+std=$(tput setaf 15)
+red=$(tput setaf 9 bold)
+green=$(tput setaf 10 bold)
+yellow=$(tput setaf 11 bold)
+pink=$(tput setaf 57)
+blue=$(tput setaf 27 bold)
 
 #Main Script
 echo ""
@@ -56,26 +56,26 @@ for f in *; do
 	if [[ ${f} == *".bin" ]]
 	then
         	printf "%d. %s\n" $n "${f}"
-        	flash_image_paths[${n}]=$flash_image_dir"/"${f}
+        	flash_image_paths[n]=$flash_image_dir"/"${f}
         	((n++))
 	fi
 done
 
 echo ""
-read -p "${green}Enter a Number for a File: ${std}" n
+read -r -p "${green}Enter a Number for a File: ${std}" n
 
 while [[ $n -lt 1 || $n -gt ${#flash_image_paths[@]} ]]
 do
         echo ""
         echo "${red}Wrong Input! Please Select a Number for a File!${std}"
-        read -p "Enter a Number for a File: " n;
+        read -r -p "Enter a Number for a File: " n;
 done
 
 image_to_flash="${flash_image_paths[$n]}"
 
 echo ""
 echo "${green}You selected the following File:${std}"
-echo $image_to_flash
+echo "$image_to_flash"
 
 echo ""
 echo ""
@@ -84,13 +84,13 @@ echo "${yellow}FLASHING A WRONG FILE TO THE EEPROM COULD TOTALLY BRICK YOUR SYST
 echo "${red}IMAGE FILE:${std} $image_to_flash"
 
 echo ""
-read -p "${green}Yes (y)/ No (n): ${std}" n;
+read -r -p "${green}Yes (y)/ No (n): ${std}" n;
 
 while ! [[ "$n" =~ ^(y|n)$ ]];
 do
         echo ""
         echo "${red}Wrong Input! Please type 'y' for 'YES' or 'n' for 'NO'!${std}"
-        read -p "Yes (y)/ No (n): " n;
+        read -r -p "Yes (y)/ No (n): " n;
 done
 
 if [[ "$n" =~ ^(y)$ ]];
@@ -100,7 +100,7 @@ then
         echo "Your Image is being flashed to the EEPROM!"
 
 	echo ""
-        sudo rpi-eeprom-update -d -f $image_to_flash
+        sudo rpi-eeprom-update -d -f "$image_to_flash"
 
         echo ""
         echo "${green}Finished the total Desctruction of your Raspberry Pi!${std}"
