@@ -46,11 +46,9 @@ Would install the rpi-eeprom-flasher but doesn't do much when already installed
 </br>
 ATTENTION!!</br>
 </br>
-DO NOT install the EEPROM Flasher with the RPI-EEPROM-AUTOINSTALLER and use the RPI-EEPROM-INSTALLER</br>
-instead!!</br>
-</br>
+DO NOT install the EEPROM Flasher with the RPI-EEPROM-AUTOINSTALLER and use the RPI-EEPROM-INSTALLER instead!!</br>
 The RPI-EEPROM-AUTOINSTALLER is just meant to be used by my RPI-SETUP-TOOL!</br>
-
+</br>
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
