@@ -41,6 +41,16 @@ Uninstalls the whole rpi-eeprom-flasher and all it's Files
 
     rpi-eeprom-installer
 Would install the rpi-eeprom-flasher but doesn't do much when already installed
+</br>
+</br>
+</br>
+ATTENTION!!</br>
+</br>
+DO NOT install the EEPROM Flasher with the RPI-EEPROM-AUTOINSTALLER and use the RPI-EEPROM-INSTALLER</br>
+instead!!</br>
+</br>
+The RPI-EEPROM-AUTOINSTALLER is just meant to be used by my RPI-SETUP-TOOL!</br>
+
 
 ----------------------------------------------------------------
 ----------------------------------------------------------------
