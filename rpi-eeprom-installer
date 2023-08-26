@@ -37,6 +37,7 @@ os_type="$(grep -E '^(NAME)=' /etc/os-release)"
 os_type=${os_type#*=}
 echo ""
 echo "$os_type"
+
 if [[ "$os_type" == *"Kali"* ]]
 then
 	echo ""
@@ -63,24 +64,22 @@ then
 
 	while ! [[ "$n" =~ ^(y|n)$ ]];
 	do
-        	echo ""
-        	echo "${red}Wrong Input! Please type 'y' for 'YES' or 'n' for 'NO'!${std}"
-        	read -r -p "Yes (y)/ No (n): " n;
+		echo ""
+		echo "${red}Wrong Input! Please type 'y' for 'YES' or 'n' for 'NO'!${std}"
+		read -r -p "Yes (y)/ No (n): " n;
 	done
 
 	if [[ "$n" =~ ^(y)$ ]];
 	then
-        	echo ""
-        	echo "${blue}Updating the OS now...${std}"
-
+		echo ""
+		echo "${blue}Updating the OS now...${std}"
 		sudo apt-get upgrade -y
-
-        	echo ""
-        	echo "${blue}Operating System updated successfully! Continuing the Installation!${std}"
-        	sleep 1
+		echo ""
+		echo "${blue}Operating System updated successfully! Continuing the Installation!${std}"
+		sleep 1
 	else
-        	echo ""
-        	echo "${red}Not updating your OS! Installation might fail!${std}"
+		echo ""
+		echo "${red}Not updating your OS! Installation might fail!${std}"
 		sleep 1
 	fi
 
@@ -90,58 +89,70 @@ then
 	echo ""
 	echo "${blue}Checking Installation Directory...${std}"
 	echo "$install_dir"
+
 	if [ -d "$install_dir" ]
 	then
-    		echo "${red}Installation Directory exists. Not Creating this Directory!${std}"
+		echo "${red}Installation Directory exists. Not Creating this Directory!${std}"
 	else
-    		echo "${blue}Installation Directory doesn't exist. Creating the Directory!${std}"
+		echo "${blue}Installation Directory doesn't exist. Creating the Directory!${std}"
 		sudo mkdir -p $install_dir
 	fi
+
 	echo "${blue}Checking EEPROM Files Directory...${std}"
 	echo "$eeprom_files_dir"
+
 	if [ -d "$eeprom_files_dir" ]
-        then
-                echo "${red}EEPROM Files Directory exists. Not Creating this Directory!${std}"
-        else
-                echo "${blue}EEPROM Files Directory doesn't exist. Creating the Directory!${std}"
-                sudo mkdir -p $eeprom_files_dir
-        fi
+	then
+		echo "${red}EEPROM Files Directory exists. Not Creating this Directory!${std}"
+	else
+		echo "${blue}EEPROM Files Directory doesn't exist. Creating the Directory!${std}"
+		sudo mkdir -p $eeprom_files_dir
+	fi
+
 	echo "${blue}Checking Clean Images Directory...${std}"
-        echo "$clean_image_dir"
-        if [ -d "$clean_image_dir" ]
-        then
-                echo "${red}Clean Images Directory exists. Not Creating this Directory!${std}"
-        else
-                echo "${blue}Clean Images Directory doesn't exist. Creating the Directory!${std}"
-                sudo mkdir -p $clean_image_dir
-        fi
-        echo "${blue}Checking Flash Images Directory...${std}"
-        echo "$flash_image_dir"
-        if [ -d "$flash_image_dir" ]
-        then
-                echo "${red}Flash Images Directory exists. Not Creating this Directory!${std}"
-        else
-                echo "${blue}Flash Images Directory doesn't exist. Creating the Directory!${std}"
-                sudo mkdir -p $flash_image_dir
-        fi
-        echo "${blue}Checking Config Files Directory...${std}"
-        echo "$config_dir"
-        if [ -d "$config_dir" ]
-        then
-                echo "${red}Config Files Directory exists. Not Creating this Directory!${std}"
-        else
-                echo "${blue}Config Files Directory doesn't exist. Creating the Directory!${std}"
-                sudo mkdir -p $config_dir
-        fi
-        echo "${blue}Checking Temp Files Directory...${std}"
-        echo "$temp_dir"
-        if [ -d "$temp_dir" ]
-        then
-                echo "${red}Temp Files Directory exists. Not Creating this Directory!${std}"
-        else
-                echo "${blue}Temp Files Directory doesn't exist. Creating the Directory!${std}"
-                sudo mkdir -p $temp_dir
-        fi
+	echo "$clean_image_dir"
+
+	if [ -d "$clean_image_dir" ]
+	then
+		echo "${red}Clean Images Directory exists. Not Creating this Directory!${std}"
+	else
+		echo "${blue}Clean Images Directory doesn't exist. Creating the Directory!${std}"
+		sudo mkdir -p $clean_image_dir
+	fi
+
+	echo "${blue}Checking Flash Images Directory...${std}"
+	echo "$flash_image_dir"
+
+	if [ -d "$flash_image_dir" ]
+	then
+		echo "${red}Flash Images Directory exists. Not Creating this Directory!${std}"
+	else
+		echo "${blue}Flash Images Directory doesn't exist. Creating the Directory!${std}"
+		sudo mkdir -p $flash_image_dir
+	fi
+
+	echo "${blue}Checking Config Files Directory...${std}"
+	echo "$config_dir"
+
+	if [ -d "$config_dir" ]
+	then
+		echo "${red}Config Files Directory exists. Not Creating this Directory!${std}"
+	else
+		echo "${blue}Config Files Directory doesn't exist. Creating the Directory!${std}"
+		sudo mkdir -p $config_dir
+	fi
+
+	echo "${blue}Checking Temp Files Directory...${std}"
+	echo "$temp_dir"
+
+	if [ -d "$temp_dir" ]
+	then
+		echo "${red}Temp Files Directory exists. Not Creating this Directory!${std}"
+	else
+		echo "${blue}Temp Files Directory doesn't exist. Creating the Directory!${std}"
+		sudo mkdir -p $temp_dir
+	fi
+
 	echo ""
 	echo "${blue}Directories are okay! Continuing the Installation!${std}"
 	sleep 1
@@ -149,16 +160,18 @@ then
 	echo ""
 	echo ""
 	echo "${blue}Checking if Git is installed...${std}"
+
 	if hash git 2>/dev/null
 	then
 		echo ""
-        	echo "${blue}Git is already installed!${std}"
+		echo "${blue}Git is already installed!${std}"
 	else
 		echo ""
-        	echo "${red}Git is not installed. Installing Git now!${std}"
+		echo "${red}Git is not installed. Installing Git now!${std}"
 		sudo apt-get install git -y
 		sleep 1
 	fi
+
 	echo ""
 	echo "${blue}Git is installed and okay! Continuing Installation!${std}"
 	sleep 1
@@ -202,50 +215,51 @@ then
 	echo ""
 	echo "${blue}Installing the RPI-EEPROM-FLASHER...${std}"
 	echo ""
-        echo "${blue}Switching into Install Directory...${std}"
-        echo "$install_dir"
-        cd $install_dir
-        echo "${blue}Downloading Files with git...${std}"
-        sudo git clone https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git
-        echo "${blue}Making the Scripts executable...${std}"
-        cd rpi-eeprom-flasher
-        sudo chmod 0755 rpi-eeprom-flasher
-        sudo chmod 0755 rpi-eeprom-creator
-        sudo chmod 0755 rpi-eeprom-installer
-        sudo chmod 0755 rpi-eeprom-uninstaller
-        echo "${blue}Copying the Scripts into $eeprom_scripts_dir Directory...${std}"
-        sudo cp rpi-eeprom-flasher $eeprom_scripts_dir
-        sudo cp rpi-eeprom-creator $eeprom_scripts_dir
-        sudo cp rpi-eeprom-installer $eeprom_scripts_dir
-        sudo cp rpi-eeprom-uninstaller $eeprom_scripts_dir
-        echo "${blue}Copying the Config Files to $config_dir ...${std}"
-        sudo cp default-sd-config.txt $config_dir
-        sudo cp default-usb-config.txt $config_dir
-        echo ""
-        echo "${blue}RPI-EEPROM-FLASHER is installed and okay! Continuing Installation!${std}"
-        sleep 1
+	echo "${blue}Switching into Install Directory...${std}"
+	echo "$install_dir"
+	cd $install_dir
+	echo "${blue}Downloading Files with git...${std}"
+	sudo git clone https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git
+	echo "${blue}Making the Scripts executable...${std}"
+	cd rpi-eeprom-flasher
+	sudo chmod 0755 rpi-eeprom-flasher
+	sudo chmod 0755 rpi-eeprom-creator
+	sudo chmod 0755 rpi-eeprom-installer
+	sudo chmod 0755 rpi-eeprom-uninstaller
+	echo "${blue}Copying the Scripts into $eeprom_scripts_dir Directory...${std}"
+	sudo cp rpi-eeprom-flasher $eeprom_scripts_dir
+	sudo cp rpi-eeprom-creator $eeprom_scripts_dir
+	sudo cp rpi-eeprom-installer $eeprom_scripts_dir
+	sudo cp rpi-eeprom-uninstaller $eeprom_scripts_dir
+	echo "${blue}Copying the Config Files to $config_dir ...${std}"
+	sudo cp default-sd-config.txt $config_dir
+	sudo cp default-usb-config.txt $config_dir
+	echo ""
+	echo "${blue}RPI-EEPROM-FLASHER is installed and okay! Continuing Installation!${std}"
+	sleep 1
 
-        echo ""
-        echo ""
-        echo "${blue}Cleaning up the current Folder...${std}"
-        echo ""
-        echo "${blue}Checking if I'm executed within my GIT Directory...${std}"
-        echo "$start_dir"
+	echo ""
+	echo ""
+	echo "${blue}Cleaning up the current Folder...${std}"
+	echo ""
+	echo "${blue}Checking if I'm executed within my GIT Directory...${std}"
+	echo "$start_dir"
+
 	if [[ $start_dir == *"rpi-eeprom-flasher" ]]
-        then
+	then
 		echo ""
-                echo "${yellow}It seems I'm executed within my GIT Directory.${std}"
+		echo "${yellow}It seems I'm executed within my GIT Directory.${std}"
 		echo "${yellow}YOU WILL HAVE TO USE 'CD' AFTER I PURGED MY DIRECTORY!${std}"
 		echo ""
 		echo "${blue}Purging the Directory now...${std}"
-                echo "${blue}Installation Complete! Good Bye!${std}"
-                sudo rm -d -r "$start_dir"
-        else
-                echo "${blue}It seems I'm run as Standalone. Deleting just myself!${std}"
-                echo ""
-                echo "${blue}Installation Complete! Good Bye!${std}"
-                sudo rm "$start_dir""/rpi-eeprom-installer"
-        fi
+		echo "${blue}Installation Complete! Good Bye!${std}"
+		sudo rm -d -r "$start_dir"
+	else
+		echo "${blue}It seems I'm run as Standalone. Deleting just myself!${std}"
+		echo ""
+		echo "${blue}Installation Complete! Good Bye!${std}"
+		sudo rm "$start_dir""/rpi-eeprom-installer"
+	fi
 else
 	echo ""
 	echo "${red}Wrong Operating System detected! Aborting the Installation!${std}"
