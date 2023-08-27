@@ -2,7 +2,7 @@
 
 #Directory Declarations
 start_dir=$PWD
-temp_dir=/tmp/downloads
+temp_dir=/tmp/eeprom_flasher
 install_dir=/etc/eeprom_flasher
 eeprom_files_dir=/usr/bin/firmware
 eeprom_scripts_dir=/usr/bin
