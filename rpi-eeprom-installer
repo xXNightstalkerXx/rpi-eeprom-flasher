@@ -12,7 +12,7 @@ config_dir=/etc/eeprom_flasher/configs
 latest_eeprom_binary="pieeprom-2023-01-11.bin"
 
 #Git URL Declarations
-git_branch="main"
+git_branch="Debian_Bullseye"
 git_eeprom_flasher="https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git"
 git_rpi_eeprom="https://github.com/raspberrypi/rpi-eeprom.git"
 
