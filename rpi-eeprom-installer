@@ -11,6 +11,11 @@ flash_image_dir=/etc/eeprom_flasher/flash_images
 config_dir=/etc/eeprom_flasher/configs
 latest_eeprom_binary="pieeprom-2023-01-11.bin"
 
+#Git URL Declarations
+git_branch="main"
+git_eeprom_flasher="https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git"
+git_rpi_eeprom="https://github.com/raspberrypi/rpi-eeprom.git"
+
 #Color Declarations
 std=$(tput setaf 15)
 red=$(tput setaf 9 bold)
@@ -184,7 +189,7 @@ then
 	echo "$temp_dir"
 	cd $temp_dir
 	echo "${blue}Downloading Binaries with git...${std}"
-	sudo git clone https://github.com/raspberrypi/rpi-eeprom.git
+	sudo git clone "${git_rpi_eeprom}"
 	echo "${blue}Making the Scripts executable...${std}"
 	cd rpi-eeprom
 	sudo chmod 0755 rpi-eeprom-config
@@ -219,7 +224,7 @@ then
 	echo "$install_dir"
 	cd $install_dir
 	echo "${blue}Downloading Files with git...${std}"
-	sudo git clone https://github.com/xXNightstalkerXx/rpi-eeprom-flasher.git
+	sudo git clone -b "${git_branch}" "${git_eeprom_flasher}"
 	echo "${blue}Making the Scripts executable...${std}"
 	cd rpi-eeprom-flasher
 	sudo chmod 0755 rpi-eeprom-flasher
