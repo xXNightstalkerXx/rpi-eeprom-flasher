@@ -1,3 +1,4 @@
+## DEPRECIATED (Debian Bullseye)
 # rpi-eeprom-flasher
 This Repository has some bash Scripts in it that make it easier to manage the EEPROM flashing process on a Raspberry Pi with the Kali Linux Distro installed.
 
@@ -14,7 +15,7 @@ Also feel free to contribute to this Repository and make it better :)
 ----------------------------------------------------------------
 # INSTALLATION
 
-    wget https://raw.githubusercontent.com/xXNightstalkerXx/rpi-eeprom-flasher/master/rpi-eeprom-installer
+    wget https://raw.githubusercontent.com/xXNightstalkerXx/rpi-eeprom-flasher/Debian_Bullseye/rpi-eeprom-installer
 Download the rpi-eeprom-installer Script with wget
 
     sudo chmod 0755 rpi-eeprom-installer
